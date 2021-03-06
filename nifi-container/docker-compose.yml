@@ -26,6 +26,7 @@ services:
       # - ./opt/nifi/nifi-current/logs:/opt/nifi/nifi-current/logs
         - ./lib/mysql-connector-java.jar:/opt/nifi/nifi-current/lib/mysql-connector-java.jar
         - ./lib/nifi-corenlp-nar-1.0.nar:/opt/nifi/nifi-current/lib/nifi-corenlp-nar-1.0.nar
+        - ./export:/home/nifi/export
       
       # A custom nifi.properties file can be mounted as follows.
       #- /var/lib/nifi/conf/nifi.properties:/opt/nifi/nifi-current/conf/nifi.properties:ro
