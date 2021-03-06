@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+  mysql:
+    container_name: twitter_mysql
+    image: mysql:5.7.33
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: twitter
+      MYSQL_USER: twitter
+      MYSQL_PASSWORD: twitteruser
+    # volumes: 
+    #   - ./data:/var/lib/mysql
+    ports: 
+      - 3306:3306
