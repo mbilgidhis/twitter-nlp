@@ -36,11 +36,11 @@ services:
       
       # -Xms
       #   The initial JVM heap size.
-      NIFI_JVM_HEAP_INIT: 1G
+      NIFI_JVM_HEAP_INIT: ${NIFI_JVM_HEAP_INIT}
 
       # -Xmx
       #   The maximum JVM heap size.
-      NIFI_JVM_HEAP_MAX: 2G
+      NIFI_JVM_HEAP_MAX: ${NIFI_JVM_HEAP_MAX}
       
       # -Xdebug
       #   The JVM Debugger can be enabled by setting this environment variable to any value.

@@ -7,10 +7,10 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     environment: 
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: twitter
-      MYSQL_USER: twitter
-      MYSQL_PASSWORD: twitteruser
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MSYQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     # volumes: 
     #   - ./data:/var/lib/mysql
     ports: 

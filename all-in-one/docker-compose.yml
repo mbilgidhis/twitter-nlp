@@ -6,10 +6,10 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     environment: 
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: twitter
-      MYSQL_USER: twitter
-      MYSQL_PASSWORD: twitteruser
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MSYQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     # volumes: 
     #   - ./data:/var/lib/mysql
     ports: 
@@ -61,11 +61,11 @@ services:
       
       # -Xms
       #   The initial JVM heap size.
-      NIFI_JVM_HEAP_INIT: 1G
+      NIFI_JVM_HEAP_INIT: ${NIFI_JVM_HEAP_INIT}
 
       # -Xmx
       #   The maximum JVM heap size.
-      NIFI_JVM_HEAP_MAX: 2G
+      NIFI_JVM_HEAP_MAX: ${NIFI_JVM_HEAP_MAX}
       
       # -Xdebug
       #   The JVM Debugger can be enabled by setting this environment variable to any value.
