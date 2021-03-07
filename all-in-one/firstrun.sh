@@ -65,3 +65,13 @@ fi
 
 chmod -R 777 export
 docker-compose up -d
+
+echo "Waiting container twitter_mysql to be ready..."
+sleep 20
+
+MYSQL_CLIENT=$(which mysql)
+if [[ -z $MYSQL_CLIENT ]]; then
+    echo "Please install MySQL Client if you want to create default table. If you don't have already you can manually create table using file from sql/default.sql"
+else
+    mysql -u $MSYQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -h 127.0.0.1 < ../sql/default.sql
+fi

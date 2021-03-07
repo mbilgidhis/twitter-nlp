@@ -4,7 +4,7 @@ services:
     image: apache/nifi:latest
     container_name: twitter_nifi
     restart: unless-stopped
-    network_mode: bridge
+    # network_mode: bridge
     ports:
       # HTTP
       - 8080:8080/tcp

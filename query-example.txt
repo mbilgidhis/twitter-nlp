@@ -1,0 +1,28 @@
+## pie chart
+SELECT
+  timestamp AS "time",
+  sentiment AS metric,
+  count(sentiment) as value
+FROM analysis
+where
+  $__unixEpochFilter(timestamp/1000)
+GROUP BY sentiment, 2
+
+#list
+SELECT
+  timestamp as time,
+  text as label
+FROM 
+  analysis
+WHERE
+  $__unixEpochFilter(timestamp/1000)
+ORDER BY timestamp desc
+
+# client --> display name $__cell_0
+SELECT
+  distinct(source) as source,
+  count(*) as total
+FROM 
+  analysis
+group by source
+order by total desc

@@ -3,7 +3,7 @@ services:
   mysql:
     container_name: twitter_mysql
     image: mysql:5.7.33
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password  --sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
     restart: unless-stopped
     environment: 
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -29,7 +29,7 @@ services:
     image: apache/nifi:latest
     container_name: twitter_nifi
     restart: unless-stopped
-    network_mode: bridge
+    # network_mode: bridge
     ports:
       # HTTP
       - 8080:8080/tcp
