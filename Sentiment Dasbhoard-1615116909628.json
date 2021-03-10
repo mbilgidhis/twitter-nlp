@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1615116891171,
+  "iteration": 1615391771210,
   "links": [],
   "panels": [
     {
@@ -89,7 +89,7 @@
           "group": [],
           "metricColumn": "text",
           "rawQuery": true,
-          "rawSql": "SELECT\n  timestamp as time,\n  text as label\nFROM \n  analysis\nWHERE\n  $__unixEpochFilter(timestamp/1000)\nORDER BY timestamp desc",
+          "rawSql": "SELECT\n  timestamp as time,\n  text as label\nFROM \n  analysis\nWHERE\n  $__unixEpochFilter(timestamp/1000) and filter = '$filter'\nORDER BY timestamp desc",
           "refId": "A",
           "select": [
             [
@@ -166,7 +166,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  sentiment AS metric,\n  count(sentiment) as value\nFROM analysis\nGROUP BY sentiment, 2",
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  sentiment AS metric,\n  count(sentiment) as value\nFROM analysis\nwhere filter = '$filter'\nGROUP BY sentiment, 2",
           "refId": "A",
           "select": [
             [
@@ -241,7 +241,7 @@
           "hide": false,
           "metricColumn": "sentiment",
           "rawQuery": true,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  sentiment AS metric,\n  count(sentiment) as value\nFROM analysis\nwhere\n  $__unixEpochFilter(timestamp/1000)\nGROUP BY sentiment, 2",
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  sentiment AS metric,\n  count(sentiment) as value\nFROM analysis\nwhere\n  $__unixEpochFilter(timestamp/1000) and filter = '$filter'\nGROUP BY sentiment, 2",
           "refId": "A",
           "select": [
             [
@@ -336,7 +336,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  distinct(source) as source,\n  count(*) as total\nFROM \n  analysis\ngroup by source\norder by total desc",
+          "rawSql": "SELECT\n  distinct(source) as source,\n  count(*) as total\nFROM \n  analysis\nwhere filter = '$filter'\ngroup by source\norder by total desc",
           "refId": "A",
           "select": [
             [
@@ -377,9 +377,9 @@
         "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "Hashtag",
+        "label": "Filter",
         "multi": false,
-        "name": "Filter",
+        "name": "filter",
         "options": [],
         "query": "select distinct filter from analysis",
         "refresh": 1,
@@ -395,12 +395,12 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Sentiment Dasbhoard",
+  "title": "Sentiment Dashboard",
   "uid": "hPl1CN8Mk",
-  "version": 6
+  "version": 9
 }
