@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1615391771210,
+  "iteration": 1615392753285,
   "links": [],
   "panels": [
     {
@@ -385,7 +385,7 @@
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
+        "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -402,5 +402,5 @@
   "timezone": "",
   "title": "Sentiment Dashboard",
   "uid": "hPl1CN8Mk",
-  "version": 9
+  "version": 14
 }
