@@ -1,4 +1,8 @@
 # Twitter Sentiment Analysis
+
+## Stop Here
+<strong>Beware!!! If you use mobile data, please stop. When starting this project, it will consume at least 3GB of your data package. I know some of you are `fakir bandwidth` especially yodha aka semoet.</strong>
+
 ## Introduction
 This repository is an introduction for how sentiment analysis works using Apache Nifi as processor, MySQL as database storage, and Grafana for showing result. It needs docker to be installed on your machine, but if you prefer to install Apache Nifi, MySQL Server, and Grafana manually without docker by yourself, please feel free to do it. What you need to do are:
 * Download `core nlp processor` as I mentioned below, and put it in `lib` folder on your Apache Nifi installation.
