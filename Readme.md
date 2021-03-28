@@ -76,12 +76,13 @@ Grafana is an open source solution for running data analytics, pulling up that m
 
 This project use `sqlite` for Grafana storage configuration. You don't need to configure anything to run this project. Just run the container and import the dashboard. If you prefer to use another storage like `MySQL` or `Postgre`, you need to configure `grafana.ini` below `[database]` segment to db you prefer with its configuration. But please prepare db by yourself.
 
-Whenever `twitter_grafana` (or whatever name you change on docker-compose.yml) is already started correctly, you need to create new datasource which refer to our `twitter_mysql` container. You can access the configuration by hovering ⚙️ symbol and choose `Data Sources`. Create new data source based on `MySQL`, fill required field as shown below (please refer on configuration you create when starting the project).
-
 Default user and password for grafana are
 
 * Username: `admin`
 * Password: `admin`  
+
+Whenever `twitter_grafana` (or whatever name you change on docker-compose.yml) is already started correctly, you need to create new datasource which refer to our `twitter_mysql` container. You can access the configuration by hovering ⚙️ symbol and choose `Data Sources`. Create new data source based on `MySQL`, fill required field as shown below (please refer on configuration you create when starting the project).
+
 
 ![Twitter Datasource Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-datasource.png)
 
