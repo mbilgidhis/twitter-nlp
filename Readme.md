@@ -7,7 +7,7 @@
 This repository is an introduction for how sentiment analysis works using Apache Nifi as processor, MySQL as database storage, and Grafana for showing result. It needs docker to be installed on your machine, but if you prefer to install Apache Nifi, MySQL Server, and Grafana manually without docker by yourself, please feel free to do it. What you need to do are:
 * Download `core nlp processor` as I mentioned below, and put it in `lib` folder on your Apache Nifi installation.
 * Modify `all-in-one/grafana.ini` as you need.
-* As we used MySQL as our database, you might need to download MySQL driver which had already included in this repository. Please check `all-in-on/lib` folder.
+* As we use MySQL as our database, you might need to download MySQL driver which had already been included in this repository. Please check `all-in-on/lib` folder.
 * Add `grafana-piechart-panel` plugins for Grafana installation which had already been included in `all-in-one/plugins` folder.
 * Base table is prepared in `sql` folder.
 * Grafana dashboard and Nifi template can be used directly on your instalation.
@@ -37,7 +37,7 @@ Feel free to edit `docker-compose.yml` as needed.
 All basic environment is ready right now, next step you need to import nifi project and grafana dashboard.
 
 ### Apache Nifi
-You can access nifi from http://[your workstation ip]:8080/nifi or http://icube-nifi.ddns.net:8080 if you want access my server (it will be available when I am presenting). It takes times to be ready when you first install container. Be patient. 
+You can access nifi from http://localhost:8080/nifi or http://icube-nifi.ddns.net:8080 if you want access my server (it will be available when I am presenting). It takes times to be ready when you first install container. Be patient. 
 
 Apache Nifi is an open source software for automating and managing the data flow between systems. It is a powerful and reliable system to process and distribute data. It provides web-base User Interface to create, monitor, and control data flows. It has a highly configurable modifiable data flow process to modify data at runtime<sup>[1](https://github.com/mbilgidhis/twitter-nlp#notes)</sup>. For more information about Apache Nifi you can read in [this link](https://nifi.apache.org/). 
 
@@ -70,7 +70,7 @@ You can configure the other properties as you required, like `Term to Filter On`
 In this project we need to create a variable which will be saved as `filter` on our table. Since field `Term to Filter On` can't be `expression language`, we need to fill filter twice on variable and `Term to Filter On`. You can create variable by right clicking empty space on workspace, and select `Variables`, create variable named `filter`. Fill variable with any filter you like, which needs to be same value with `Term to Filter On` field in `Get Twitter` process properties. Or if you prefer not to create variable, go to `Update Record` processor, and change `${filter}` on `/filter` custom properties to your preferred filter .
 
 ### Grafana
-You can access Grafana from http://[your workstation ip]:3000/ or http://icube-grafana.ddns.net:8080 if you want access my server (it will be available when I am presenting).
+You can access Grafana from http://localhost:3000/ or http://icube-grafana.ddns.net:8080 if you want access my server (it will be available when I am presenting).
 
 Grafana is an open source solution for running data analytics, pulling up that make sense of the massive amount of data and to monitor our apps with the help of customizable dashboards<sup>[2](https://github.com/mbilgidhis/twitter-nlp#notes)</sup>. For more information about Grafana you can open [this link](https://grafana.com/).
 
