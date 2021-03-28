@@ -78,6 +78,11 @@ This project use `sqlite` for Grafana storage configuration. You don't need to c
 
 Whenever `twitter_grafana` (or whatever name you change on docker-compose.yml) is already started correctly, you need to create new datasource which refer to our `twitter_mysql` container. You can access the configuration by hovering ⚙️ symbol and choose `Data Sources`. Create new data source based on `MySQL`, fill required field as shown below (please refer on configuration you create when starting the project).
 
+Default user and password for grafana are
+
+* Username: `admin`
+* Password: `admin`  
+
 ![Twitter Datasource Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-datasource.png)
 
 As you finish the configuration, save it and then import new dashboard which I already had been prepared for this project, [`Sentiment_Dashboard-1615116909628.json`](https://github.com/mbilgidhis/twitter-nlp/blob/master/Sentiment_Dashboard-1615116909628.json). Hover on `+` symbol and choose `Import`. You can choose by copy and paste content of file or by uploading the file. If you successfully import the dashboard, our recently imported dashboard will look like this
