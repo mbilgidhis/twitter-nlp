@@ -29,7 +29,7 @@ All basic environment is ready right now, next step you need to import nifi proj
 ### Apache Nifi
 You can access nifi from http://[your workstation ip]:8080/nifi or http://icube-nifi.ddns.net:8080 if you want access my server (it will be available when I am presenting). It takes times to be ready when you first install container. Be patient. 
 
-Apache Nifi is an open source software for automating and managing the data flow between systems. It is a powerful and reliable system to process and distribute data. It provides web-base User Interface to create, monitor, and control data flows. It has a highly configurable modifiable data flow process to modify data at runtime<sup>1</sup>. For more information about Apache Nifi you can read in [this link](https://nifi.apache.org/). 
+Apache Nifi is an open source software for automating and managing the data flow between systems. It is a powerful and reliable system to process and distribute data. It provides web-base User Interface to create, monitor, and control data flows. It has a highly configurable modifiable data flow process to modify data at runtime<sup>[1](https://github.com/mbilgidhis/twitter-nlp#notes)</sup>. For more information about Apache Nifi you can read in [this link](https://nifi.apache.org/). 
 
 For this project, we need `core nlp processor` library, which has already included to be downloaded when you run `firstrun.sh`. Buf if you prefer download it manualy you can check [this link](https://github.com/tspannhw/nifi-corenlp-processor), and check on release page. I use version 1.0 on this project. If you want, you can use updated version which is 1.6 (when this `readme` was created).
 
@@ -39,7 +39,7 @@ After you successfully import template, you can insert template by drag and drop
 
 If you successfully insert template, Apache Nifi dashboard will look like this
 
-![Nifi Panel](https://github.com/mbilgidhis/twitter-nifi/blob/master/images/nifi-panel.png)
+![Nifi Panel](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/nifi-panel.png)
 
 You need to enable `Controller Service`. To access `Controller Service`, please click on anywhere except on `Processor`, then click symbol ⚙️. There are 3 `Controller Service` on this project,
 
@@ -49,11 +49,11 @@ You need to enable `Controller Service`. To access `Controller Service`, please 
 
 You can enable them by clicking ⚡ symbol on each `Controller Service`. Especially for `DBCPConnectionPool - MySQL` you need to configure correct properties first. You need to fill value respectively based on your MySQL Server configuration
 
-![MySQL Configuration](https://github.com/mbilgidhis/twitter-nifi/blob/master/images/mysql-controller.png)
+![MySQL Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/mysql-controller.png)
 
 After you enable the `Controller Service`, you need to fill token you got from `Twitter Developer` to get user tweet. Open `Get Twitter Process` group by double clicking it, and open `Get Twitter`
 
-![Get Twitter Configuration](https://github.com/mbilgidhis/twitter-nifi/blob/master/images/twitter-processor.png)
+![Get Twitter Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-processor.png)
 
 You can configure the other properties as you required, like `Term to Filter On` if you want to filter based on hastag or search term.
 
@@ -62,19 +62,19 @@ On this project we need to create a variable which will be saved as `filter` on 
 ### Grafana
 You can access Grafana from http://[your workstation ip]:3000/ or http://icube-grafana.ddns.net:8080 if you want access my server (it will be available when I am presenting).
 
-Grafana is an open source solution for running data analytics, pulling up that make sense of the massive amount of data and to monitor our apps with the help of customizable dashboards<sup>2</sup>. For more informationa about Grafana you can open [this link](https://grafana.com/).
+Grafana is an open source solution for running data analytics, pulling up that make sense of the massive amount of data and to monitor our apps with the help of customizable dashboards<sup>[2](https://github.com/mbilgidhis/twitter-nlp#notes)</sup>. For more informationa about Grafana you can open [this link](https://grafana.com/).
 
 This project use `sqlite` for Grafana storage configuration. You don't need to configure anything to run this project. Just run the container and import the dashboard. If you prefer to use another storage like `MySQL` or `Postgre`, you need to configure `grafana.ini` below `[database]` segment to db you prefer with its configuration. But please prepare db by yourself.
 
 Whenever `twitter_grafana` (or whatever name you change on docker-compose.yml) is already started correctly, you need to create new datasource which refer to our `twitter_mysql` container. You can access the configuration by hovering ⚙️ symbol and choose `Data Sources`. Create new data source based on `MySQL`, fill required field as shown below (please refer on configuration you create when starting the project).
 
-![Twitter Datasource Configuration](https://github.com/mbilgidhis/twitter-nifi/blob/master/images/twitter-datasource.png)
+![Twitter Datasource Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-datasource.png)
 
 As you finish the configuration, save it and then import new dashboard which I already had been prepared for this project, [`Sentiment_Dashboard-1615116909628.json`](https://github.com/mbilgidhis/twitter-nlp/blob/master/Sentiment_Dashboard-1615116909628.json). Hover on `+` symbol and choose `Import`. You can choose by copy and paste content of file or by uploading the file. If you successfully import the dashboard, our recently imported dashboard will look like this
 
-![Grafana Dashboard](https://github.com/mbilgidhis/twitter-nifi/blob/master/images/grafana-dashboard.png)
+![Grafana Dashboard](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/grafana-dashboard.png)
 
-#### Notes:
+### Notes:
 
 1. https://www.guru99.com/apache-nifi-tutorial.html
 2. https://www.8bitmen.com/what-is-grafana-why-use-it-everything-you-should-know-about-it/
