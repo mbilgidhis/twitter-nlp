@@ -11,7 +11,7 @@ If you want to do them one by one, go to each folder copy `.env-example` to `.en
 
 Feel free to edit `docker-compose.yml` as needed.
 
-## Twiter Developer Account
+## Twitter Developer Account
 * Open [this link](https://developer.twitter.com/en/apply-for-access) to register an account. Please make sure that you have already registered your phone number on twitter.
 * Choose whatever role you like, I prefer `hobbyist`.
 * Complete form to be able to access the api (it may take a while, since Twitter need you to fill every required form).
@@ -21,7 +21,7 @@ Feel free to edit `docker-compose.yml` as needed.
   * API Secret Key
   * Access token
   * Access token secret
-  * Bearer token
+  * Bearer token (not really required)
 
 ## Next Step
 All basic environment is ready right now, next step you need to import nifi project and grafana dashboard.
@@ -74,7 +74,9 @@ As you finish the configuration, save it and then import new dashboard which I a
 
 ![Grafana Dashboard](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/grafana-dashboard.png)
 
-### Notes:
+As we finished our configuration. We can start our step to run our workflow.
+
+## Notes:
 
 1. https://www.guru99.com/apache-nifi-tutorial.html
 2. https://www.8bitmen.com/what-is-grafana-why-use-it-everything-you-should-know-about-it/
