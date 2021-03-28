@@ -49,7 +49,7 @@ After you successfully import template, you can insert template by drag and drop
 
 If you successfully insert template, Apache Nifi dashboard will look like this
 
-![Nifi Panel](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/nifi-panel.png)
+![Nifi Panel](images/nifi-panel.png?raw=true)
 
 You need to enable `Controller Service`. To access `Controller Service`, please click on anywhere except on `Processor`, then click symbol ⚙️. There are 3 `Controller Service` on this project,
 
@@ -59,11 +59,11 @@ You need to enable `Controller Service`. To access `Controller Service`, please 
 
 You can enable them by clicking ⚡ symbol on each `Controller Service`. Especially for `DBCPConnectionPool - MySQL` you need to configure correct properties first. You need to fill value respectively based on your MySQL Server configuration
 
-![MySQL Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/mysql-controller.png)
+![MySQL Configuration](images/mysql-controller.png?raw=true)
 
 After you enable the `Controller Service`, you need to fill token you got from `Twitter Developer` to get user tweet. Open `Get Twitter Process` group by double clicking it, and open `Get Twitter`
 
-![Get Twitter Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-processor.png)
+![Get Twitter Configuration](images/twitter-processor.png?raw=true)
 
 You can configure the other properties as you required, like `Term to Filter On` if you want to filter based on hastag or search term.
 
@@ -84,15 +84,15 @@ Default user and password for grafana are
 Whenever `twitter_grafana` (or whatever name you change on docker-compose.yml) is already started correctly, you need to create new datasource which refer to our `twitter_mysql` container. You can access the configuration by hovering ⚙️ symbol and choose `Data Sources`. Create new data source based on `MySQL`, fill required field as shown below (please refer on configuration you create when starting the project).
 
 
-![Twitter Datasource Configuration](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/twitter-datasource.png)
+![Twitter Datasource Configuration](images/twitter-datasource.png?raw=true)
 
 As you finish the configuration, save it and then import new dashboard which I already had been prepared for this project, [`Sentiment_Dashboard-1615116909628.json`](https://github.com/mbilgidhis/twitter-nlp/blob/master/Sentiment_Dashboard-1615116909628.json). Hover on `+` symbol and choose `Import`. You can choose by copy and paste content of file or by uploading the file. If you successfully import the dashboard, our recently imported dashboard will look like this
 
-![Grafana Dashboard](https://github.com/mbilgidhis/twitter-nlp/blob/master/images/grafana-dashboard.png)
+![Grafana Dashboard](images/grafana-dashboard.png?raw=true)
 
 As we finished our configuration. We can start our step to run our workflow.
 
-## Notes:
+## Notes
 
 1. https://www.guru99.com/apache-nifi-tutorial.html
 2. https://www.8bitmen.com/what-is-grafana-why-use-it-everything-you-should-know-about-it/
