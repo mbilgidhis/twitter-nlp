@@ -33,6 +33,8 @@ Feel free to edit `docker-compose.yml` as needed.
   * Access token secret
   * Bearer token (not really required)
 
+`Get Twitter` processor used by Apache Nifi is using Twitter API version 1. This project might be outdated in the future and need to be updated using latest API version. If you're interested in what tweet object can be fetched from Twitter, please take a look in [this documentation](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/tweet)
+
 ## Next Step
 All basic environment is ready right now, next step you need to import nifi project and grafana dashboard.
 
@@ -96,3 +98,5 @@ As we finished our configuration. We can start our step to run our workflow.
 
 1. https://www.guru99.com/apache-nifi-tutorial.html
 2. https://www.8bitmen.com/what-is-grafana-why-use-it-everything-you-should-know-about-it/
+
+</sup>ps: I will update this Readme, if there are some additional info.</sup>
